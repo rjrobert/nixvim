@@ -14,32 +14,21 @@
     };
   };
 
+  # colorscheme = "catppuccin";
   colorschemes.catppuccin = {
     enable = true;
     settings = {
       flavour = "macchiato";
       transparent_background = true;
       float.transparent = true;
+      term_colors = true;
       default_integrations = true;
       integrations = {
-        blink_cmp = true;
-        cmp = true;
         flash = true;
-        fzf = true;
         grug_far = true;
-        gitsigns = {
-          enabled = true;
-          transparent = true;
-        };
-        illuminate = true;
         lsp_trouble = true;
-        mini.enabled = true;
         native_lsp.enabled = true;
-        navic = {
-          enabled = true;
-          custom_bg = "NONE";
-        };
-        neotest = true;
+        navic.enabled = true;
         noice = true;
         notifier = true;
         notify = true;

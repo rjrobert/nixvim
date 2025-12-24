@@ -1,7 +1,7 @@
 {
   plugins.mini = {
     enable = true;
-    # mockDevIcons = true;
+    mockDevIcons = true;
     modules = {
       ai = {
         n_lines = 500;
@@ -16,7 +16,7 @@
       };
       bufremove = {};
       comment = {};
-      # icons = {};
+      icons = {};
       pairs = {
         modes = {
           insert = true;

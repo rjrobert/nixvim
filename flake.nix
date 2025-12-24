@@ -44,6 +44,7 @@
           packages = [nvim];
           shellHook = ''
             echo "Welcome to the Nixvim development shell!"
+            NVIM_APPNAME="nixvim"
             nixvim-print-init
           '';
         };

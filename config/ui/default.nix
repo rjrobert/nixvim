@@ -7,7 +7,6 @@
   ];
 
   plugins = {
-    web-devicons.enable = true;
     nui.enable = true;
   };
 }

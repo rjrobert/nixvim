@@ -8,6 +8,6 @@
   ];
 
   extraPackages = with pkgs; [
-    fortune-kind
+    fortune
   ];
 }

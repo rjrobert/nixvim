@@ -3,26 +3,6 @@
     gitsigns = {
       enable = true;
       settings = {
-        signs = {
-          add = {
-            text = " ";
-          };
-          change = {
-            text = " ";
-          };
-          delete = {
-            text = " ";
-          };
-          untracked = {
-            text = "";
-          };
-          topdelete = {
-            text = "󱂥 ";
-          };
-          changedelete = {
-            text = "󱂧 ";
-          };
-        };
         on_attach = ''
           function(buffer)
             local gs = package.loaded.gitsigns

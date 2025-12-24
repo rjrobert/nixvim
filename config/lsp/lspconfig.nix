@@ -1,11 +1,12 @@
-{ ... }:
-{
+{...}: {
   plugins = {
     lsp = {
       enable = true;
       inlayHints = true;
 
       servers = {
+        golangci_lint_ls.enable = true;
+        gopls.enable = true;
         nil_ls.enable = true;
         jsonls.enable = true;
         yamlls.enable = true;
