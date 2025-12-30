@@ -5,6 +5,8 @@
     ./autocmds.nix
   ];
 
+  plugins.lz-n.enable = true;
+
   diagnostic.settings = {
     underline = true;
     update_in_insert = true;
