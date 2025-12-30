@@ -1,4 +1,8 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   lsp.servers = {
     golangci_lint_ls.enable = true;
     gopls = {
@@ -35,6 +39,17 @@
         staticcheck = false;
         directoryFilters = ["-.git" "-.vscode" "-.idea" "-.vscode-test" "-node_modules"];
         semanticTokens = true;
+      };
+    };
+  };
+
+  plugins.conform-nvim.settings = {
+    formatters_by_ft = {
+      go = ["gofumpt"];
+    };
+    formatters = {
+      gofumpt = {
+        command = "${lib.getExe pkgs.gofumpt}";
       };
     };
   };

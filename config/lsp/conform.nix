@@ -1,5 +1,14 @@
-{ lib, pkgs, ... }:
 {
+  lib,
+  pkgs,
+  ...
+}: {
+  extraConfigLuaPre =
+    #lua
+    ''
+      local slow_format_filetypes = {}
+    '';
+
   plugins.conform-nvim = {
     enable = true;
     settings = {
@@ -37,8 +46,8 @@
         '';
       notify_on_error = true;
       formatters_by_ft = {
-        nix = [ "nixfmt" ];
-        "_" = [ "trim_whitespace" ];
+        nix = ["nixfmt"];
+        "_" = ["trim_whitespace"];
       };
       formatters = {
         nixfmt = {
