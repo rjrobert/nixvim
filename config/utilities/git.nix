@@ -1,7 +1,7 @@
 {
   plugins = {
     gitsigns = {
-      enable = true;
+      enable = false;
       settings = {
         on_attach = ''
           function(buffer)
