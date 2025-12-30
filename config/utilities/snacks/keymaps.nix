@@ -43,6 +43,12 @@
       action.__raw = "function() Snacks.picker.lsp_config() end";
       options.desc = "Lsp Info";
     }
+    {
+      mode = ["n" "x"];
+      key = "gd";
+      action.__raw = "function() Snacks.picker.lsp_definitions() end";
+      options.desc = "Goto Definition";
+    }
 
     # Snacks Terminal
     {

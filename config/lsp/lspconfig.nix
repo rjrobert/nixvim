@@ -1,70 +1,63 @@
 {...}: {
-  plugins = {
-    lsp = {
-      enable = true;
-      inlayHints = true;
-
-      servers = {
-        golangci_lint_ls.enable = true;
-        gopls.enable = true;
-        nil_ls.enable = true;
-        jsonls.enable = true;
-        yamlls.enable = true;
-      };
-
-      keymaps = {
-        silent = true;
-        lspBuf = {
-          gd = {
-            action = "definition";
-            desc = "Goto Definition";
-          };
-          gr = {
-            action = "references";
-            desc = "Goto References";
-          };
-          gD = {
-            action = "declaration";
-            desc = "Goto Declaration";
-          };
-          gI = {
-            action = "implementation";
-            desc = "Goto Implementation";
-          };
-          gT = {
-            action = "type_definition";
-            desc = "Type Definition";
-          };
-          K = {
-            action = "hover";
-            desc = "Hover";
-          };
-          "<leader>cw" = {
-            action = "workspace_symbol";
-            desc = "Workspace Symbol";
-          };
-          "<leader>cr" = {
-            action = "rename";
-            desc = "Rename";
-          };
-        };
-        diagnostic = {
-          "<leader>cd" = {
-            action = "open_float";
-            desc = "Line Diagnostics";
-          };
-          "[d" = {
-            action = "goto_next";
-            desc = "Next Diagnostic";
-          };
-          "]d" = {
-            action = "goto_prev";
-            desc = "Previous Diagnostic";
-          };
-        };
-      };
+  lsp = {
+    inlayHints.enable = true;
+    servers = {
+      nil_ls.enable = true;
+      jsonls.enable = true;
+      yamlls.enable = true;
     };
 
+    keymaps = [
+      {
+        key = "gd";
+        lspBufAction = "definition";
+        options.desc = "Goto Definition";
+      }
+      {
+        key = "gr";
+        lspBufAction = "references";
+        options.desc = "References";
+      }
+      {
+        key = "gD";
+        lspBufAction = "declaration";
+        options.desc = "Goto Declaration";
+      }
+      {
+        key = "gI";
+        lspBufAction = "implementation";
+        options.desc = "Goto Implementation";
+      }
+      {
+        key = "gT";
+        lspBufAction = "type_definition";
+        options.desc = "Type Definition";
+      }
+      {
+        key = "K";
+        lspBufAction = "hover";
+        options.desc = "Hover";
+      }
+      {
+        key = "gK";
+        lspBufAction = "signature_help";
+        options.desc = "Signature Help";
+      }
+      {
+        key = "<leader>cw";
+        lspBufAction = "workspace_symbol";
+        options.desc = "Workspace Symbol";
+      }
+      {
+        key = "<leader>ca";
+        lspBufAction = "code_action";
+        options.desc = "Code Action";
+      }
+    ];
+  };
+
+  plugins = {
+    lspconfig.enable = true;
     lsp-format.enable = true;
     lsp-lines.enable = true;
 
@@ -77,6 +70,24 @@
   };
 
   keymaps = [
+    {
+      mode = "n";
+      key = "<leader>cd";
+      action.__raw = "function() vim.diagnostic.open_float() end";
+      options.desc = "Line Diagnostics";
+    }
+    {
+      mode = "n";
+      key = "[d";
+      action.__raw = "function() vim.diagnostic.goto_next() end";
+      options.desc = "Next Diagnostic";
+    }
+    {
+      mode = "n";
+      key = "]d";
+      action.__raw = "function() vim.diagnostic.goto_prev() end";
+      options.desc = "Previous Diagnostic";
+    }
     {
       mode = "n";
       key = "<leader>xx";

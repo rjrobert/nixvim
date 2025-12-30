@@ -23,11 +23,27 @@
       float.transparent = true;
       term_colors = true;
       default_integrations = true;
+      lsp_styles = {
+        underlines = {
+          errors = ["undercurl"];
+          hints = ["undercurl"];
+          information = ["undercurl"];
+          warnings = ["undercurl"];
+        };
+      };
       integrations = {
         flash = true;
         grug_far = true;
         lsp_trouble = true;
-        native_lsp.enabled = true;
+        native_lsp = {
+          enabled = true;
+          underlines = {
+            errors = ["undercurl"];
+            hints = ["undercurl"];
+            information = ["undercurl"];
+            warnings = ["undercurl"];
+          };
+        };
         navic.enabled = true;
         noice = true;
         notifier = true;
