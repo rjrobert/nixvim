@@ -2,7 +2,11 @@
   plugins.bufferline = {
     enable = true;
     settings = {
-      highlights.__raw = ''require("catppuccin.special.bufferline").get_theme()'';
+      highlights.__raw =
+        #lua
+        ''
+          require("catppuccin.special.bufferline").get_theme()
+        '';
       options = {
         diagnostics = "nvim_lsp";
         always_show_bufferline = false;

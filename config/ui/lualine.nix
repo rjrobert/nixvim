@@ -5,18 +5,7 @@
       options = {
         theme = "catppuccin";
         globalstatus = true;
-        disabled_filetypes.statusline = ["dashboard" "alpha" "snacks_dashboard"];
-        component_separators = {
-          left = "";
-          right = "";
-        };
-        section_separators = {
-          left = "";
-          right = "";
-        };
-      };
-      winbar = {
-        lualine_c = ["nvim-navic"];
+        disabled_filetypes.statusline = ["snacks_dashboard"];
       };
       sections = {
         lualine_a = ["mode"];
@@ -50,45 +39,61 @@
             };
           }
           {
-            __unkeyed-1 = "nvim-navic";
+            __unkeyed-1 = "navic";
             color_correction = "dynamic";
           }
         ];
         lualine_x = [
           {
-            __unkeyed-1.__raw = ''function() return require("noice").api.status.command.get() end'';
-            cond.__raw = ''function() return package.loaded["noice"] and require("noice").api.status.command.has() end'';
-            color.__raw = ''function() return { fg = package.loaded["snacks"] and Snacks.util.color("Statement") } end'';
+            __unkeyed-1.__raw =
+              #lua
+              ''
+                function() return require("noice").api.status.command.get() end
+              '';
+            cond.__raw =
+              #lua
+              ''
+                function() return package.loaded["noice"] and require("noice").api.status.command.has() end
+              '';
+            color.__raw =
+              #lua
+              ''
+                function() return { fg = package.loaded["snacks"] and Snacks.util.color("Statement") } end
+              '';
           }
           {
-            __unkeyed-1.__raw = ''function() return require("noice").api.status.mode.get() end'';
-            cond.__raw = ''function() return package.loaded["noice"] and require("noice").api.status.mode.has() end'';
-            color.__raw = ''function() return { fg = package.loaded["snacks"] and Snacks.util.color("Constant") } end'';
+            __unkeyed-1.__raw =
+              #lua
+              ''
+                function() return require("noice").api.status.mode.get() end
+              '';
+            cond.__raw =
+              #lua
+              ''
+                function() return package.loaded["noice"] and require("noice").api.status.mode.has() end
+              '';
+            color.__raw =
+              #lua
+              ''
+                function() return { fg = package.loaded["snacks"] and Snacks.util.color("Constant") } end
+              '';
           }
           {
-            __unkeyed-1.__raw = ''function() return "  " .. require("dap").status() end'';
-            cond.__raw = ''function() return package.loaded["dap"] and require("dap").status() ~= "" end'';
-            color.__raw = ''function() return { fg = package.loaded["snacks"] and Snacks.util.color("Debug") } end'';
-          }
-          {
-            __unkeyed-1 = "diff";
-            symbols = {
-              added = " ";
-              modified = " ";
-              removed = " ";
-            };
-            source.__raw = ''
-              function()
-                local gitsigns = vim.b.gitsigns_status_dict
-                if gitsigns then
-                  return {
-                    added = gitsigns.added,
-                    modified = gitsigns.changed,
-                    removed = gitsigns.removed,
-                  }
-                end
-              end
-            '';
+            __unkeyed-1.__raw =
+              #lua
+              ''
+                function() return "  " .. require("dap").status() end
+              '';
+            cond.__raw =
+              #lua
+              ''
+                function() return package.loaded["dap"] and require("dap").status() ~= "" end
+              '';
+            color.__raw =
+              #lua
+              ''
+                function() return { fg = package.loaded["snacks"] and Snacks.util.color("Debug") } end
+              '';
           }
         ];
       };
