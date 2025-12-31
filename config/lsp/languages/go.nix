@@ -37,20 +37,41 @@
         usePlaceholders = true;
         completeUnimported = true;
         staticcheck = false;
-        directoryFilters = ["-.git" "-.vscode" "-.idea" "-.vscode-test" "-node_modules"];
+        directoryFilters = [
+          "-.git"
+          "-.vscode"
+          "-.idea"
+          "-.vscode-test"
+          "-node_modules"
+        ];
         semanticTokens = true;
       };
     };
   };
 
-  plugins.conform-nvim.settings = {
-    formatters_by_ft = {
-      go = ["gofumpt"];
-    };
-    formatters = {
-      gofumpt = {
-        command = "${lib.getExe pkgs.gofumpt}";
+  plugins = {
+    conform-nvim.settings = {
+      formatters_by_ft = {
+        go = [
+          "goimports"
+          "gofumpt"
+        ];
       };
+      formatters = {
+        gofmt = {
+          command = "${pkgs.go}/bin/gofmt";
+        };
+        gofumpt = {
+          command = "${lib.getExe pkgs.gofumpt}";
+        };
+        goimports = {
+          command = "${pkgs.go}/bin/goimports";
+        };
+      };
+    };
+
+    lint.lintersByFt = {
+      go = ["golangcilint"];
     };
   };
 }

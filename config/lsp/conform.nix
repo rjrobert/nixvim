@@ -46,14 +46,50 @@
         '';
       notify_on_error = true;
       formatters_by_ft = {
-        nix = ["nixfmt"];
+        lua = ["stylua"];
         "_" = ["trim_whitespace"];
       };
       formatters = {
-        nixfmt = {
-          command = "${lib.getExe pkgs.nixfmt}";
+        injected = {
+          options.ignore_errors = true;
+        };
+        stylua = {
+          command = "${lib.getExe pkgs.stylua}";
         };
       };
     };
   };
+
+  keymaps = [
+    {
+      mode = [
+        "n"
+        "x"
+      ];
+      key = "<leader>cf";
+      action.__raw =
+        #lua
+        ''
+          function()
+            require("conform").format({ lsp_fallback = true })
+          end
+        '';
+      options.desc = "Format Buffer";
+    }
+    {
+      mode = [
+        "n"
+        "x"
+      ];
+      key = "<leader>cF";
+      action.__raw =
+        #lua
+        ''
+          function()
+            require("conform").format({ formatters = {"injected"}, timeout_ms = 3000 })
+          end
+        '';
+      options.desc = "Format Injected Langs";
+    }
+  ];
 }
