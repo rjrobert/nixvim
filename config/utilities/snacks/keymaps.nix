@@ -6,7 +6,9 @@
       key = "<leader><space>";
       action.__raw =
         #lua
-        "function() Snacks.picker.smart() end";
+        ''
+          function() Snacks.picker.smart() end
+        '';
       options.desc = "Find Files";
     }
     {
@@ -14,7 +16,9 @@
       key = "<leader>,";
       action.__raw =
         #lua
-        "function() Snacks.picker.buffers() end";
+        ''
+          function() Snacks.picker.buffers() end
+        '';
       options.desc = "Buffers";
     }
     {
@@ -22,7 +26,9 @@
       key = "<leader>/";
       action.__raw =
         #lua
-        "function() Snacks.picker.grep() end";
+        ''
+          function() Snacks.picker.grep() end
+        '';
       options.desc = "Search Files";
     }
     {
@@ -30,7 +36,9 @@
       key = "<leader>n";
       action.__raw =
         #lua
-        "function() Snacks.picker.notifications() end";
+        ''
+          function() Snacks.picker.notifications() end
+        '';
       options.desc = "Notifications";
     }
     {
@@ -38,7 +46,9 @@
       key = "<leader>e";
       action.__raw =
         #lua
-        "function() Snacks.picker.explorer() end";
+        ''
+          function() Snacks.picker.explorer() end
+        '';
       options.desc = "File Explorer";
     }
     {
@@ -46,7 +56,9 @@
       key = "<leader>ff";
       action.__raw =
         #lua
-        "function() Snacks.picker.files() end";
+        ''
+          function() Snacks.picker.files() end
+        '';
       options.desc = "Find Files";
     }
     {
@@ -54,25 +66,37 @@
       key = "<leader>cl";
       action.__raw =
         #lua
-        "function() Snacks.picker.lsp_config() end";
+        ''
+          function() Snacks.picker.lsp_config() end
+        '';
       options.desc = "Lsp Info";
     }
     {
-      mode = ["n" "x"];
+      mode = [
+        "n"
+        "x"
+      ];
       key = "gd";
       action.__raw =
         #lua
-        "function() Snacks.picker.lsp_definitions() end";
+        ''
+          function() Snacks.picker.lsp_definitions() end
+        '';
       options.desc = "Goto Definition";
     }
 
     # Snacks Terminal
     {
-      mode = ["n" "t"];
+      mode = [
+        "n"
+        "t"
+      ];
       key = "<C-/>";
       action.__raw =
         #lua
-        "function() Snacks.terminal() end";
+        ''
+          function() Snacks.terminal() end
+        '';
       options.desc = "Terminal";
     }
     {
@@ -80,7 +104,9 @@
       key = "<leader>ft";
       action.__raw =
         #lua
-        "function() Snacks.terminal() end";
+        ''
+          function() Snacks.terminal() end
+        '';
       options.desc = "Terminal";
     }
     {
@@ -88,7 +114,9 @@
       key = "<leader>gg";
       action.__raw =
         #lua
-        "function() Snacks.terminal('lazygit') end";
+        ''
+          function() Snacks.terminal('lazygit') end
+        '';
       options.desc = "LazyGit";
     }
 
@@ -98,7 +126,9 @@
       key = "<leader>bd";
       action.__raw =
         #lua
-        "function() Snacks.bufdelete() end";
+        ''
+          function() Snacks.bufdelete() end
+        '';
       options.desc = "Delete Buffer";
     }
     {
@@ -106,7 +136,9 @@
       key = "<leader>bo";
       action.__raw =
         #lua
-        "function() Snacks.bufdelete.other() end";
+        ''
+          function() Snacks.bufdelete.other() end
+        '';
       options.desc = "Delete Other Buffers";
     }
     {
@@ -122,7 +154,9 @@
       key = "<leader>gb";
       action.__raw =
         #lua
-        "function() Snacks.git.blame_line() end";
+        ''
+          function() Snacks.git.blame_line() end
+        '';
       options.desc = "Git Blame Line";
     }
     {
@@ -130,7 +164,9 @@
       key = "<leader>gd";
       action.__raw =
         #lua
-        "function() Snacks.picker.git_diff() end";
+        ''
+          function() Snacks.picker.git_diff() end
+        '';
       options.desc = "Git Diff (hunks)";
     }
     {
@@ -150,7 +186,9 @@
       key = "<leader>gs";
       action.__raw =
         #lua
-        "function() Snacks.picker.git_status() end";
+        ''
+          function() Snacks.picker.git_status() end
+        '';
       options.desc = "Git Status";
     }
     {
@@ -158,7 +196,9 @@
       key = "<leader>gS";
       action.__raw =
         #lua
-        "function() Snacks.picker.git_stash() end";
+        ''
+          function() Snacks.picker.git_stash() end
+        '';
       options.desc = "Git Stash";
     }
   ];
