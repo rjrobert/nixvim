@@ -1,10 +1,7 @@
 {...}: {
   lsp = {
     inlayHints.enable = true;
-    servers = {
-      jsonls.enable = true;
-      yamlls.enable = true;
-    };
+    servers = {}; # enabled per-language
 
     keymaps = [
       {
