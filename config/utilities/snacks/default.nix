@@ -69,9 +69,5 @@ in {
           }):map("<leader>uG")
         '';
     };
-
-    todo-comments = {
-      enable = true;
-    };
   };
 }

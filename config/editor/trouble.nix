@@ -1,8 +1,14 @@
 {
-  plugins.trouble = {
-    enable = true;
-    settings = {
-      auto_close = true;
+  plugins = {
+    trouble = {
+      enable = true;
+      settings = {
+        auto_close = true;
+      };
+    };
+
+    todo-comments = {
+      enable = true;
     };
   };
 
@@ -70,6 +76,7 @@
                 vim.notify(err, vim.log.levels.ERROR)
               end
             end
+          end
         '';
       options.desc = "Previous Trouble/Quickfix Item";
     }
@@ -88,8 +95,47 @@
                 vim.notify(err, vim.log.levels.ERROR)
               end
             end
+          end
         '';
       options.desc = "Next Trouble/Quickfix Item";
+    }
+
+    # todo comments
+    {
+      mode = "n";
+      key = "]t";
+      action.__raw =
+        #lua
+        ''
+          function()
+              require("todo-comments").jump_next()
+          end
+        '';
+      options.desc = "Next Todo Comment";
+    }
+    {
+      mode = "n";
+      key = "[t";
+      action.__raw =
+        #lua
+        ''
+          function()
+              require("todo-comments").jump_prev()
+          end
+        '';
+      options.desc = "Previous Todo Comment";
+    }
+    {
+      mode = "n";
+      key = "<leader>xt";
+      action = "<cmd>Trouble todo toggle<cr>";
+      options.desc = "Todo (Trouble)";
+    }
+    {
+      mode = "n";
+      key = "<leader>xT";
+      action = "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>";
+      options.desc = "Todo/Fix/Fixme (Trouble)";
     }
   ];
 }
