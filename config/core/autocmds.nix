@@ -40,7 +40,18 @@
     # Close some filetypes with q
     {
       event = "FileType";
-      pattern = ["help" "lspinfo" "qf" "checkhealth" "notify"];
+      pattern = [
+        "checkhealth"
+        "gitsigns-blame"
+        "grug-far"
+        "help"
+        "lspinfo"
+        "neotest-output"
+        "neotest-output-panel"
+        "neotest-summary"
+        "notify"
+        "qf"
+      ];
       callback.__raw =
         #lua
         ''

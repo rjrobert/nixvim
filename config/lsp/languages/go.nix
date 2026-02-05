@@ -73,5 +73,12 @@
     lint.lintersByFt = {
       go = ["golangcilint"];
     };
+
+    neotest.adapters.golang = {
+      enable = true;
+      settings = {
+        filter_dirs = [".git"];
+      };
+    };
   };
 }

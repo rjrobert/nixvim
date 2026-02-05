@@ -54,6 +54,9 @@
     completeopt = "menu,menuone,noselect";
     pumheight = 10;
 
+    # Sessions (exclude netrw and special buffers)
+    sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,terminal";
+
     # Folding (with treesitter)
     foldmethod = "expr";
     foldexpr = "nvim_treesitter#foldexpr()";

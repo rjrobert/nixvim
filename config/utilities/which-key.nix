@@ -5,7 +5,10 @@
       preset = "helix";
       spec = [
         {
-          mode = ["n" "x"];
+          mode = [
+            "n"
+            "x"
+          ];
           __unkeyed-1 = [
             {
               __unkeyed-1 = "<leader>f";
@@ -26,6 +29,10 @@
             {
               __unkeyed-1 = "<leader>s";
               group = "search";
+            }
+            {
+              __unkeyed-1 = "<leader>t";
+              group = "test";
             }
             {
               __unkeyed-1 = "<leader>w";
