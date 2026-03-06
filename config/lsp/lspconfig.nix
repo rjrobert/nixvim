@@ -5,11 +5,6 @@
 
     keymaps = [
       {
-        key = "gd";
-        lspBufAction = "definition";
-        options.desc = "Goto Definition";
-      }
-      {
         key = "gr";
         lspBufAction = "references";
         options.desc = "References";

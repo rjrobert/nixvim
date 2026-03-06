@@ -22,7 +22,6 @@
         ];
       };
       settings = {
-        # log_level = "trace";
         status.virtual_text = true;
         output = {
           enabled = true;
